@@ -33,6 +33,21 @@
                     <p><?php echo pegaCargo($_SESSION['cargo']); ?></p>
                 </div>
             </div>
+            <div class="itens-menu">
+                <h2>Cadastro</h2>
+                <a href="">Cadastrar Depoimento</a>
+                <a href="">Cadastrar Serviço</a>
+                <a href="">Cadastrar Slides</a>
+                <h2>Gestão</h2>
+                <a href="">Listar Depoimentos</a>
+                <a href="">Listar Serviços</a>
+                <a href="">Listar Slides</a>
+                <h2>Admnistração do Painel</h2>
+                <a href="">Editar Usuario</a>
+                <a href="">Adicionar Usuarios</a>
+                <h2>Configuração Geral</h2>
+                <a href="">Editar</a>
+            </div>
         </div>
     </aside> 
     <header>
@@ -48,17 +63,28 @@
     </header>
     <div class="content">
         <div class="box-content left w100">
-            
+            <h2><i class="fa fa-home"></i> Painel de Controle - Danki Code</h2>
+            <div class="box-metricas">
+                <div class="box-metrica-single">
+                    <div class="box-metrica-wraper">
+                        <h2>Usuarios Online</h2>
+                        <p>10</p>
+                    </div>
+                </div>
+                <div class="box-metrica-single">
+                    <div class="box-metrica-wraper">
+                        <h2>Total de Visitas</h2>
+                        <p>100</p>
+                    </div>
+                </div>
+                <div class="box-metrica-single">
+                    <div class="box-metrica-wraper">
+                        <h2>Visitas Hoje</h2>
+                        <p>3</p>
+                    </div>
+                </div>
+            </div>
         </div>
-        <!--<div class="box-content left w100">
-            
-        </div>
-        <div class="box-content left w50">
-            
-        </div>
-        <div class="box-content right w50">
-            
-        </div>-->
         <div class="clear"></div>
     </div>
     <script src="<?php echo INCLUDE_PATH ?>js/jquery.js"></script>

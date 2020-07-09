@@ -108,7 +108,7 @@ aside{
     height: 100%;
     background-color: #455a64;
     width: 300px;
-    padding: 10px;
+    padding: 10px 0;
     position: fixed;
     left: 0;
     top: 0;
@@ -145,6 +145,24 @@ aside{
     transform: translate(-50%, -50%);
     font-size: 50px;
     color: #2f3d42;
+}
+
+.imagem-usuario{
+    display: inline-block;
+    width: 130px;
+    height: 130px;
+    border-radius: 50%;
+    border: 3px solid #2f3d42;
+    position: relative;
+}
+
+.imagem-usuario img{
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
 }
 
 .nome-usuario{
@@ -190,20 +208,114 @@ aside{
     margin-bottom: 10px;
 }
 
+.itens-menu{
+    margin-top: 30px;
+}
+
+.itens-menu h2{
+    text-align: left;
+    font-weight: normal;
+    font-size: 18px;
+    background-color: #2f3d42;
+    color: white;
+    padding: 8px;
+}
+
+.itens-menu a{
+    display: block;
+    padding: 8px;
+    font-weight: 300;
+    font-size: 16px;
+    text-decoration: none;
+    color: white;
+    border-bottom: 2px solid #2f3d42;
+}
+
+.box-metricas{
+	margin-top:16px;
+	padding:0 15px;
+}
+
+.box-metrica-single{
+	float: left;
+	position: relative;
+	width: 33.3%;
+	background: #F4B03E;
+	border: 5px solid white;
+}
+
+.box-metricas .box-metrica-single:nth-of-type(2){
+	background: #E05C4E;
+}
+
+.box-metricas .box-metrica-single:nth-of-type(3){
+	background: #0091ea;
+}
+
+.box-metrica-wraper{
+	padding: 10px 20px;
+	text-align: left;
+	color: white;
+}
+
+.box-metrica-wraper h2{
+	font-size: 28px;
+}
+
+.box-metrica-wraper p{
+	padding: 10px 0;
+	font-size: 26px;
+}
+
+@media screen and (max-width: 1024px){
+	.box-metrica-single{
+		width: 100%;
+	}
+}
+
 @media screen and (max-width: 768px){
-    aside{
-        width: 0;
-    }
+	
+	.content{
+		width: 100%;
+		left: 0;
+	}
 
-    header{
-        left: 0;
-        width: 100%;
-    }
+	header{
+		left: 0;
+		width: 100%;
+	}
+}
 
-    .content{
-        width: 100%;
-        left: 0;
-    }
+@media screen and (max-width: 500px){
+	.w50{
+		width: 100%;
+	}
+	.box-single-metrica{
+		width: 100%;
+		padding-top: 40%;
+	}
+}
+
+@media screen and (max-width: 400px){
+
+	.box-metrica-wraper h2{
+	font-size: 24px;
+	}
+
+	.box-metrica-wraper p{
+	padding: 10px 0;
+	font-size: 22px;
+	}
+
+	.menu-wraper{
+		width: 200px;
+	}
+}
+
+@media screen and (max-width: 380px){
+	.items-menu a{
+		font-size: 15px;
+	}
 }
 
 /* fim painel de controle */
