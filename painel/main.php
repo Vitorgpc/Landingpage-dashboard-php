@@ -15,21 +15,23 @@
 </head>
 <body>
     <aside>
-        <div class="box-usuario">
-            <?php
-                if($_SESSION['img'] == ''){
-            ?>
-                <div class="avatar-usuario">
-                    <i class="fa fa-user"></i>
+        <div class="menu-wraper">
+            <div class="box-usuario">
+                <?php
+                    if($_SESSION['img'] == ''){
+                ?>
+                    <div class="avatar-usuario">
+                        <i class="fa fa-user"></i>
+                    </div>
+                <?php }else { ?>
+                    <div class="imagem-usuario">
+                        <img src="<?php echo INCLUDE_PATH_PAINEL ?>uploads/<?php echo $_SESSION['img']; ?>" />
+                    </div>
+                <?php } ?>
+                <div class="nome-usuario">
+                    <p><?php echo $_SESSION['nome'] ?></p>
+                    <p><?php echo pegaCargo($_SESSION['cargo']); ?></p>
                 </div>
-            <?php }else { ?>
-                <div class="imagem-usuario">
-                    <img src="<?php echo INCLUDE_PATH_PAINEL ?>uploads/<?php echo $_SESSION['img']; ?>" />
-                </div>
-            <?php } ?>
-            <div class="nome-usuario">
-                <p><?php echo $_SESSION['nome'] ?></p>
-                <p><?php echo pegaCargo($_SESSION['cargo']); ?></p>
             </div>
         </div>
     </aside> 
@@ -44,5 +46,22 @@
             <div class="clear"></div>
         </div>
     </header>
+    <div class="content">
+        <div class="box-content left w100">
+            
+        </div>
+        <!--<div class="box-content left w100">
+            
+        </div>
+        <div class="box-content left w50">
+            
+        </div>
+        <div class="box-content right w50">
+            
+        </div>-->
+        <div class="clear"></div>
+    </div>
+    <script src="<?php echo INCLUDE_PATH ?>js/jquery.js"></script>
+    <script src="<?php echo INCLUDE_PATH_PAINEL ?>js/main.js"></script>
 </body>
 </html>

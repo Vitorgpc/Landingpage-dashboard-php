@@ -10,6 +10,10 @@ html, body {
     background: rgb(225, 225, 225);
 }
 
+body{
+    overflow-x: hidden;
+}
+
 /* pagina de login */
 
 .box-login{
@@ -76,7 +80,8 @@ html, body {
 }
 
 header{
-    float: left;
+    position: relative;
+    left: 300px;
     width: calc(100% - 300px);
     padding: 10px 0;
     background-color: #78909c;
@@ -97,12 +102,20 @@ header{
 }
 
 aside{
+    overflow-x: hidden;
     overflow-y: auto;
     float: left;
     height: 100%;
     background-color: #455a64;
     width: 300px;
     padding: 10px;
+    position: fixed;
+    left: 0;
+    top: 0;
+}
+
+.menu-wraper{
+    width: 300px;
 }
 
 .menu-btn{
@@ -143,6 +156,54 @@ aside{
     color: white;
     font-size: 16px;
     font-weight: normal;
+}
+
+/* Conteudo principal do painel */
+
+.w100{
+    width: 100%;
+}
+
+.w50{
+    width: 49%;
+    background: red !important;
+}
+
+.left{
+    float: left;
+}
+
+.right{
+    float: right;
+}
+
+.content{
+    width: calc(100% - 300px);
+    position: relative;
+    left: 300px;
+    padding: 10px;
+}
+
+.box-content{
+    background: white;
+    padding: 10px;
+    margin-bottom: 10px;
+}
+
+@media screen and (max-width: 768px){
+    aside{
+        width: 0;
+    }
+
+    header{
+        left: 0;
+        width: 100%;
+    }
+
+    .content{
+        width: 100%;
+        left: 0;
+    }
 }
 
 /* fim painel de controle */
