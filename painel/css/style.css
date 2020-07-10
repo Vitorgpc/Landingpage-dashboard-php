@@ -363,6 +363,14 @@ aside{
     color: #a02a1b;
 }
 
+.menu-active {
+    background-color: #3a4b51;
+}
+
+.menu-active::before{
+    content: '>> ';
+}
+
 @media screen and (max-width: 1024px){
 	.box-metrica-single{
 		width: 100%;
