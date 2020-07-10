@@ -13,6 +13,8 @@
     define('INCLUDE_PATH', 'http://localhost/Curso%20WebCompleto/Projeto_01/');
     define('INCLUDE_PATH_PAINEL',INCLUDE_PATH.'painel/');
 
+    define('BASE_DIR_PAINEL', __DIR__.'/painel');
+
     define('HOST', 'localhost');
     define('USER', 'root');
     define('PASSWORD', '');
