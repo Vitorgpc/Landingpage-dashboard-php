@@ -3,7 +3,7 @@ $(function(){
 	var open  = true;
 	var windowSize = $(window)[0].innerWidth;
 
-	var targetSizeMenu = (windowSize <= 400) ? 200 : 250;
+	var targetSizeMenu = (windowSize <= 400) ? 200 : 300;
 
 	if(windowSize <= 768){
 		$('aside').css('width','0').css('padding','0');
@@ -27,7 +27,7 @@ $(function(){
 				open = true;
 			});
 			if(windowSize > 768)
-				$('.content,header').css('width','calc(100% - 250px)');
+				$('.content,header').css('width','calc(100% - 300px)');
 				$('.content,header').animate({'left':targetSizeMenu+'px'},function(){
 				open = true;
 			});
@@ -36,7 +36,7 @@ $(function(){
 
 	$(window).resize(function(){
 		windowSize = $(window)[0].innerWidth;
-		targetSizeMenu = (windowSize <= 400) ? 200 : 250;
+		targetSizeMenu = (windowSize <= 400) ? 200 : 300;
 		if(windowSize <= 768){
 			$('aside').css('width','0').css('padding','0');
 			$('.content,header').css('width','100%').css('left','0');
@@ -46,7 +46,7 @@ $(function(){
 				open = true;
 			});
 
-			$('.content,header').css('width','calc(100% - 250px)');
+			$('.content,header').css('width','calc(100% - 300px)');
 			$('.content,header').animate({'left':targetSizeMenu+'px'},function(){
 			open = true;
 			});

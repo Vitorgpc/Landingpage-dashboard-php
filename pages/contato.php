@@ -13,5 +13,5 @@
 			<input type="hidden" name="identificador" value="form_contato" />
 			<input type="submit" name="acao" value="Enviar">
 		</form>
-	</div><!--center-->
-</div><!--contato-container-->
+	</div>
+</div>
