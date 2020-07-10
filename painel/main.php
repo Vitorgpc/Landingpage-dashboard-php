@@ -56,7 +56,7 @@
                 <i class="fa fa-bars"></i>
             </div>
             <div class="loggout">
-                <a href="<?php echo INCLUDE_PATH_PAINEL ?>"><i class="fas fa-home"></i><span> Pagina inicial</span></a>
+                <a <?php if(@$_GET['url'] == ''){ ?> style="background: #60727a; padding: 14px 15px 10px 15px;"<?php } ?> href="<?php echo INCLUDE_PATH_PAINEL ?>"><i class="fa fa-home"></i><span> Pagina inicial</span></a>
                 <a href="<?php echo INCLUDE_PATH_PAINEL ?>?loggout"><i class="fas fa-power-off"></i><span> Sair</span></a>
             </div>
             <div class="clear"></div>

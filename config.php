@@ -22,14 +22,8 @@
 
     define('NOME_EMPRESA', 'Danki Code');
 
-    function pegaCargo($cargo){
-        $arr = [
-            '0' => 'Normal',
-            '1' => 'Sub Administrador',
-            '2' => 'Administrador'
-        ];
-
-        return $arr[$cargo];
+    function pegaCargo($indice){
+        return Painel::$cargos[$indice];
     }
 
     function selecionadoMenu($par){
