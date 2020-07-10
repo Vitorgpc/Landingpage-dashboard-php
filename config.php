@@ -1,5 +1,6 @@
 <?php
     session_start();
+    date_default_timezone_set('America/Sao_Paulo');
     $autoLoad = function($class){
         if($class == 'Email'){
             require_once('classes/phpmailer/PHPMailerAutoLoad.php');
@@ -16,6 +17,8 @@
     define('USER', 'root');
     define('PASSWORD', '');
     define('DATABASE', 'projeto_01');
+
+    define('NOME_EMPRESA', 'Danki Code');
 
     function pegaCargo($cargo){
         $arr = [

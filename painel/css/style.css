@@ -92,6 +92,9 @@ header{
 }
 
 .loggout a{
+    padding: 0 20px;
+    position: relative;
+    top: 4px;
     color: white;
     font-size: 20px;
     text-decoration: none;
@@ -205,7 +208,7 @@ aside{
 .box-content{
     background: white;
     padding: 10px;
-    margin-bottom: 10px;
+    margin-bottom: 25px;
 }
 
 .itens-menu{
@@ -265,6 +268,29 @@ aside{
 .box-metrica-wraper p{
 	padding: 10px 0;
 	font-size: 26px;
+}
+
+/* tabela responsiva */
+
+.table-responsive{
+    margin: 20px auto;
+    max-width: 1280px;
+}
+
+.table-responsive .row:nth-of-type(1){
+    font-weight: bold;
+    border-bottom: 1px solid #333;
+}
+
+.table-responsive .row{
+    color: #777;
+    padding: 8px 0;
+}
+
+
+.col{
+    float: left;
+    width: 50%;
 }
 
 @media screen and (max-width: 1024px){

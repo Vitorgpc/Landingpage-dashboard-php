@@ -35,7 +35,7 @@
             </div>
             <div class="itens-menu">
                 <h2>Cadastro</h2>
-                <a href="">Cadastrar Depoimento</a>
+                <a href="<?php echo INCLUDE_PATH_PAINEL ?>cadastrar-depoimento">Cadastrar Depoimento</a>
                 <a href="">Cadastrar Serviço</a>
                 <a href="">Cadastrar Slides</a>
                 <h2>Gestão</h2>
@@ -56,36 +56,14 @@
                 <i class="fa fa-bars"></i>
             </div>
             <div class="loggout">
+                <a href="<?php echo INCLUDE_PATH_PAINEL ?>"><i class="fas fa-home"></i><span> Pagina inicial</span></a>
                 <a href="<?php echo INCLUDE_PATH_PAINEL ?>?loggout"><i class="fas fa-power-off"></i><span> Sair</span></a>
             </div>
             <div class="clear"></div>
         </div>
     </header>
     <div class="content">
-        <div class="box-content left w100">
-            <h2><i class="fa fa-home"></i> Painel de Controle - Danki Code</h2>
-            <div class="box-metricas">
-                <div class="box-metrica-single">
-                    <div class="box-metrica-wraper">
-                        <h2>Usuarios Online</h2>
-                        <p>10</p>
-                    </div>
-                </div>
-                <div class="box-metrica-single">
-                    <div class="box-metrica-wraper">
-                        <h2>Total de Visitas</h2>
-                        <p>100</p>
-                    </div>
-                </div>
-                <div class="box-metrica-single">
-                    <div class="box-metrica-wraper">
-                        <h2>Visitas Hoje</h2>
-                        <p>3</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="clear"></div>
+        <?php Painel::carregarPagina(); ?>
     </div>
     <script src="<?php echo INCLUDE_PATH ?>js/jquery.js"></script>
     <script src="<?php echo INCLUDE_PATH_PAINEL ?>js/main.js"></script>
