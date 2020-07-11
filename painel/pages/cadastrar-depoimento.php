@@ -24,6 +24,10 @@
             <textarea name="depoimento"></textarea>
         </div>
         <div class="form-group">
+			<label>Data:</label>
+			<input formato="data" type="text" name="data">
+		</div>
+        <div class="form-group">
             <input type="hidden" name="nome_tabela" value="tb_site.depoimentos"/>
             <input type="submit" name="acao" value="Cadastrar!" />
         </div>
