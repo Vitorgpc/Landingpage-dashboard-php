@@ -66,27 +66,19 @@
         <div class="center">
             <div id="depoimentos" class="w50 left depoimentos-container">
                 <h2 class="title">Depoimentos</h2>
-                <div class="depoimento-single">
-                    <p class="depoimento-descricao">Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
-                    Mauris felis enim, tristique in nisl et, eleifend tristique sem. 
-                    Aliquam in tortor euismod, cursus justo id, consequat metus. Ut metus urna, finibus imperdiet sem eu, lacinia semper enim. 
-                    Praesent dictum ipsum in orci vulputate, ut venenatis nunc fringilla.</p>
-                    <p class="nome-autor">Lorem Ipsum</p>
-                </div>
-                <div class="depoimento-single">
-                    <p class="depoimento-descricao">Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
-                    Mauris felis enim, tristique in nisl et, eleifend tristique sem. 
-                    Aliquam in tortor euismod, cursus justo id, consequat metus. Ut metus urna, finibus imperdiet sem eu, lacinia semper enim. 
-                    Praesent dictum ipsum in orci vulputate, ut venenatis nunc fringilla.</p>
-                    <p class="nome-autor">Lorem Ipsum</p>
-                </div>
-                <div class="depoimento-single">
-                    <p class="depoimento-descricao">Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
-                    Mauris felis enim, tristique in nisl et, eleifend tristique sem. 
-                    Aliquam in tortor euismod, cursus justo id, consequat metus. Ut metus urna, finibus imperdiet sem eu, lacinia semper enim. 
-                    Praesent dictum ipsum in orci vulputate, ut venenatis nunc fringilla.</p>
-                    <p class="nome-autor">Lorem Ipsum</p>
-                </div>
+                <?php 
+                    $sql = MySql::conectar()->prepare("SELECT * FROM `tb_site.depoimentos` ORDER BY order_id ASC LIMIT 3");
+                    $sql->execute();
+                    $depoimentos = $sql->fetchAll();
+
+                    foreach ($depoimentos as $key => $value) {
+                        
+                ?>
+                    <div class="depoimento-single">
+                        <p class="depoimento-descricao"><?php echo $value['depoimento'] ?></p>
+                        <p class="nome-autor"><?php echo $value['nome'].' - '.$value['data'] ?></p>
+                    </div>
+                <?php } ?>
             </div>
             <div id="servicos" class="w50 left servicos-container">
                 <h2 class="title">Serviços</h2>
