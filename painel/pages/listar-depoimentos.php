@@ -1,4 +1,10 @@
 <?php
+    if(isset($_GET['excluir'])){
+        $idExcluir = (int)$_GET['excluir'];
+        Painel::deletar('tb_site.depoimentos', $idExcluir);
+        Painel::redirect(INCLUDE_PATH_PAINEL.'listar-depoimentos');
+    }
+
     $paginaAtual = isset($_GET['pagina']) ? (int)$_GET['pagina'] : 1;
     $porPagina = 4;
     
@@ -25,7 +31,7 @@
                     <td><?php echo $value['depoimento']; ?></td>
                     <td><?php echo $value['data']; ?></td>
                     <td><a href="" class="btn edit"><i class="fa fa-pencil"></i> Editar</a></td>
-                    <td><a href="" class="btn delete"><i class="fa fa-times"></i> Deletar</a></td>
+                    <td><a actionBtn="delete" href="<?php echo INCLUDE_PATH_PAINEL ?>listar-depoimentos?excluir=<?php echo $value['id']; ?>" class="btn delete"><i class="fa fa-times"></i> Deletar</a></td>
                 </tr>
             <?php } ?>
         </table>
