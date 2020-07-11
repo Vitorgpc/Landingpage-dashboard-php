@@ -3,7 +3,7 @@
 ?>
 
 <div class="box-content">
-    <h2><i class="fas fa-file-alt"></i> Cadastrar Depoimentos</h2>
+    <h2><i class="fas fa-file-alt"></i> Cadastrar Depoimento</h2>
     <form method="post">
         <?php
             if(isset($_POST['acao'])){
