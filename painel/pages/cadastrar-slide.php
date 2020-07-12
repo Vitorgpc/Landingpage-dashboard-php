@@ -5,14 +5,15 @@
             if(isset($_POST['acao'])){
                 $nome = $_POST['nome'];
                 $imagem = $_FILES['imagem'];
-
                 if($nome == ''){
                     Painel::alerta('erro', ' Preencha o campo de Nome');
                 } else{
                     if(Painel::imagemValida($imagem) == false) {
                         Painel::alerta('erro', ' O formato especificado nao esta correto');
                     } else{
+                        include('../classes/lib/WideImage.php');
                         $imagem = Painel::uploadFile($imagem);
+                        WideImage::load('uploads/'.$imagem)->resize(100)->saveToFile('uploads/'.$imagem);
                         $arr = ['nome'=>$nome, 'slide'=>$imagem, 'order_id'=>'0', 'nome_tabela'=>'tb_site.slides'];
                         Painel::insert($arr);
                         Painel::alerta('sucesso', ' O cadastro do Slide foi realizado com sucesso');
