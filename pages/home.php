@@ -84,18 +84,16 @@
                 <h2 class="title">Serviços</h2>
                 <div class="servicos">
                     <ul>
-                        <li>Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
-                        Mauris felis enim, tristique in nisl et, eleifend tristique sem. 
-                        Aliquam in tortor euismod, cursus justo id, consequat metus. Ut metus urna, finibus imperdiet sem eu, lacinia semper enim. 
-                        Praesent dictum ipsum in orci vulputate, ut venenatis nunc fringilla.</li>
-                        <li>Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
-                        Mauris felis enim, tristique in nisl et, eleifend tristique sem. 
-                        Aliquam in tortor euismod, cursus justo id, consequat metus. Ut metus urna, finibus imperdiet sem eu, lacinia semper enim. 
-                        Praesent dictum ipsum in orci vulputate, ut venenatis nunc fringilla.</li>
-                        <li>Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
-                        Mauris felis enim, tristique in nisl et, eleifend tristique sem. 
-                        Aliquam in tortor euismod, cursus justo id, consequat metus. Ut metus urna, finibus imperdiet sem eu, lacinia semper enim. 
-                        Praesent dictum ipsum in orci vulputate, ut venenatis nunc fringilla.</li>
+                        <?php 
+                        $sql = MySql::conectar()->prepare("SELECT * FROM `tb_site.servicos` ORDER BY order_id ASC LIMIT 3");
+                        $sql->execute();
+                        $servicos = $sql->fetchAll();
+
+                        foreach ($servicos as $key => $value) {
+                            
+                        ?>
+                        <li><?php echo $value['servico'] ?></li>
+                        <?php } ?>
                     </ul>
                 </div>
             </div>
