@@ -135,7 +135,7 @@
             $sql->execute();
         }
 
-        public static function update($arr) {
+        public static function update($arr, $single = false) {
             $certo = true;
             $first = false;
             $nome_tabela = $arr['nome_tabela'];
@@ -161,17 +161,27 @@
             }
 
             if($certo == true) {
-                $parametros[] = $arr['id'];
-                $sql = MySql::conectar()->prepare($query.' WHERE id=?');
-                $sql->execute($parametros);
+                if($single == false) {
+                    $parametros[] = $arr['id'];
+                    $sql = MySql::conectar()->prepare($query.' WHERE id=?');
+                    $sql->execute($parametros);
+                } else{
+                    $sql = MySql::conectar()->prepare($query);
+                    $sql->execute($parametros);
+                }
             }
 
             return $certo;
         }
 
-        public static function select($tabela, $query, $arr) {
-            $sql = MySql::conectar()->prepare("SELECT * FROM `$tabela` WHERE $query");
-            $sql->execute($arr);
+        public static function select($tabela, $query = '', $arr = '') {
+            if($query != false){
+                $sql = MySql::conectar()->prepare("SELECT * FROM `$tabela` WHERE $query");
+                $sql->execute($arr);
+            } else{
+                $sql = MySql::conectar()->prepare("SELECT * FROM `$tabela`");
+                $sql->execute();
+            }
             return $sql->fetch();
         }
 

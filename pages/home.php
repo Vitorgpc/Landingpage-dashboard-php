@@ -16,15 +16,8 @@
 <section class="descricao-autor">
     <div class="center">
         <div class="w50 left">
-            <h2>Guilherme C. Grillo</h2>
-            <p>Nunc pretium, lectus sit amet imperdiet commodo, velit ex rutrum massa, quis mollis tellus nibh a tellus. 
-            Nullam euismod mi id mi consequat elementum. Nulla non fringilla nisl, nec scelerisque arcu.
-            Donec aliquet sapien tempor erat rhoncus gravida. Morbi a magna eros. Sed sit amet ante semper, fringilla lacus vitae, bibendum urna. 
-            Pellentesque nec sagittis libero.</p>
-            <p>Nunc pretium, lectus sit amet imperdiet commodo, velit ex rutrum massa, quis mollis tellus nibh a tellus. 
-            Nullam euismod mi id mi consequat elementum. Nulla non fringilla nisl, nec scelerisque arcu.
-            Donec aliquet sapien tempor erat rhoncus gravida. Morbi a magna eros. Sed sit amet ante semper, fringilla lacus vitae, bibendum urna. 
-            Pellentesque nec sagittis libero.</p>
+            <h2><?php echo $infoSite['nome_autor']; ?></h2>
+            <p><?php echo $infoSite['descricao']; ?></p>
         </div>    
         <div class="w50 left">
             <img class="right" src="<?php echo INCLUDE_PATH; ?>images/foto.jpg" />
@@ -36,28 +29,19 @@
         <div class="center">
             <h2 class="title">Especialidades</h2>
             <div class="w33 left box-especialidade">
-                <h3><i class="fab fa-css3"></i></h3>
+                <h3><i class="<?php echo $infoSite['icone1']; ?>"></i></h3>
                 <h4>CSS3</h4>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
-                Mauris felis enim, tristique in nisl et, eleifend tristique sem. 
-                Aliquam in tortor euismod, cursus justo id, consequat metus. Ut metus urna, finibus imperdiet sem eu, lacinia semper enim. 
-                Praesent dictum ipsum in orci vulputate, ut venenatis nunc fringilla.</p>
+                <p><?php echo $infoSite['descricao1']; ?></p>
             </div>
             <div class="w33 left box-especialidade">
-                <h3><i class="fab fa-html5"></i></h3>
+                <h3><i class="<?php echo $infoSite['icone2']; ?>"></i></h3>
                 <h4>HTML5</h4>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
-                Mauris felis enim, tristique in nisl et, eleifend tristique sem. 
-                Aliquam in tortor euismod, cursus justo id, consequat metus. Ut metus urna, finibus imperdiet sem eu, lacinia semper enim. 
-                Praesent dictum ipsum in orci vulputate, ut venenatis nunc fringilla.</p>
+                <p><?php echo $infoSite['descricao2']; ?></p>
             </div>
             <div class="w33 left box-especialidade">
-                <h3><i class="fab fa-js-square"></i></h3>
+                <h3><i class="<?php echo $infoSite['icone3']; ?>"></i></h3>
                 <h4>JavaScript</h4>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
-                Mauris felis enim, tristique in nisl et, eleifend tristique sem. 
-                Aliquam in tortor euismod, cursus justo id, consequat metus. Ut metus urna, finibus imperdiet sem eu, lacinia semper enim. 
-                Praesent dictum ipsum in orci vulputate, ut venenatis nunc fringilla.</p>
+                <p><?php echo $infoSite['descricao3']; ?></p>
             </div>
             <div class="clear"></div>
         </div>
