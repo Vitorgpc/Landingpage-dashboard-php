@@ -1,7 +1,13 @@
 <section class="banner-container">
-	<div style="background-image: url('<?php echo INCLUDE_PATH; ?>images/bg-form.jpg');" class="banner-single"></div><!--banner-single-->
-	<div style="background-image: url('<?php echo INCLUDE_PATH; ?>images/bg-form2.jpg');" class="banner-single"></div><!--banner-single-->
-	<div style="background-image: url('<?php echo INCLUDE_PATH; ?>images/bg-form3.jpg');" class="banner-single"></div><!--banner-single-->
+    <?php 
+        $sql = MySql::conectar()->prepare("SELECT * FROM `tb_site.slides`");
+        $sql->execute();
+        $depoimentos = $sql->fetchAll();
+        foreach ($depoimentos as $key => $value) {
+        
+    ?>
+        <div style="background-image: url('<?php echo INCLUDE_PATH_PAINEL ?>uploads/<?php echo $value['slide']; ?>');" class="banner-single"></div>
+    <?php } ?>
 	<div class="overlay"></div><!--overlay-->
 		<div class="center">
 		<form method="post">

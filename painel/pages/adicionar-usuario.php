@@ -32,7 +32,9 @@
                         Painel::alerta('erro', ' O Login já existe');
                     } else{
                         $usuario = new Usuario();
+                        include('../classes/lib/WideImage.php');
                         $imagem = Painel::uploadFile($imagem);
+                        WideImage::load('uploads/'.$imagem)->resize(100)->saveToFile('uploads/'.$imagem);
                         $usuario->cadastrarUsuario($login, $senha, $imagem, $nome, $cargo);
                         Painel::alerta('sucesso', ' O cadastro foi realizado com sucesso');
                     }

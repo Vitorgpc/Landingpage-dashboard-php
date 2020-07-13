@@ -51,7 +51,7 @@
         </div>
         <div class="form-group">
             <label>Conteudo: </label>
-            <textarea name="conteudo"><?php recoverPost('conteudo'); ?></textarea>
+            <textarea class="tinymce" name="conteudo"><?php recoverPost('conteudo'); ?></textarea>
         </div>
         <div class="form-group">
             <label>Imagem de Capa: </label>
