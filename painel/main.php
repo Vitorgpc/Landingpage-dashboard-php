@@ -51,7 +51,7 @@
                 <a <?php selecionadoMenu('cadastrar-categoria'); ?> href="<?php echo INCLUDE_PATH_PAINEL ?>cadastrar-categoria">Cadastrar Categoria</a>
                 <a <?php selecionadoMenu('gerenciar-categorias'); ?> href="<?php echo INCLUDE_PATH_PAINEL ?>gerenciar-categorias">Gerenciar Categorias</a>
                 <a <?php selecionadoMenu('cadastrar-noticia'); ?> href="<?php echo INCLUDE_PATH_PAINEL ?>cadastrar-noticia">Cadastrar Noticia</a>
-                <a <?php selecionadoMenu('gerenciar-noticia'); ?> href="<?php echo INCLUDE_PATH_PAINEL ?>gerenciar-noticia">Gerenciar Noticias</a>
+                <a <?php selecionadoMenu('gerenciar-noticias'); ?> href="<?php echo INCLUDE_PATH_PAINEL ?>gerenciar-noticias">Gerenciar Noticias</a>
             </div>
         </div>
     </aside> 
