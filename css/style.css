@@ -5,6 +5,11 @@
     font-family: "Open Sans";
 }
 
+input{
+    border-radius: 0;
+    appearance: none;
+}
+
 /** BOOT CSS **/
 html, body{
     height: 100%;
