@@ -75,10 +75,15 @@
 		}else{
 			//Podemos fazer o que quiser, pois a página não existe.
 			if($url != 'depoimentos' && $url != 'servicos'){
-				$pagina404 = true;
-				include('pages/404.php');
+				$urlPar = explode('/', $url)[0];
+				if($urlPar != 'noticias'){
+					$pagina404 = true;
+					include('pages/404.php');
+				} else{
+					include('pages/noticias.php');
+				}
 			}else{
-				include('pages/home.php');
+				include('pages/home.php');	
 			}
 		}
 
@@ -97,6 +102,18 @@
 	<script src='https://maps.googleapis.com/maps/api/js?v=3.exp&key=AIzaSyDHPNQxozOzQSZ-djvWGOBUsHkBUoT_qH4'></script>
 	<script src="<?php echo INCLUDE_PATH; ?>js/scripts.js"></script>
 	<script src="<?php echo INCLUDE_PATH; ?>js/slider.js"></script>
+
+	<?php 
+		if(is_array($url) && strstr($url[0],'noticias') !== false){
+	?>
+		<script>
+			$(function(){
+				$('select').change(function(){
+					location.href=include_path+"noticias/"+$(this).val();
+				});
+			})
+		</script>
+	<?php } ?>
 
 	<?php
 		if($url == 'contato'){

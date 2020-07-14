@@ -22,7 +22,7 @@
                         Painel::deleteFile($imagem_atual);
                         $imagem = Painel::uploadFile($imagem);
                         $slug = Painel::generateSlug($titulo);
-                        $arr = ['titulo'=>$titulo, 'conteudo'=>$conteudo, 'capa'=>$imagem, 'slug'=>$slug, 'id'=>$id, 'nome_tabela'=>'tb_site.noticias'];
+                        $arr = ['titulo'=>$titulo, 'data'=>date('Y-m-d'),'conteudo'=>$conteudo, 'capa'=>$imagem, 'slug'=>$slug, 'id'=>$id, 'nome_tabela'=>'tb_site.noticias'];
                         Painel::update($arr);
                         $noticia = Painel::select('tb_site.noticias', 'id = ?', array($id));
                         Painel::alerta('sucesso', ' A Noticia foi editado com sucesso');
@@ -32,7 +32,7 @@
                 } else{
                     $imagem = $imagem_atual;
                     $slug = Painel::generateSlug($titulo);
-                    $arr = ['titulo'=>$titulo, 'conteudo'=>$conteudo, 'capa'=>$imagem, 'slug'=>$slug, 'id'=>$id, 'nome_tabela'=>'tb_site.noticias'];
+                    $arr = ['titulo'=>$titulo, 'data'=>date('Y-m-d'), 'conteudo'=>$conteudo, 'capa'=>$imagem, 'slug'=>$slug, 'id'=>$id, 'nome_tabela'=>'tb_site.noticias'];
                     Painel::update($arr);
                     $noticia = Painel::select('tb_site.noticias', 'id = ?', array($id));
                     Painel::alerta('sucesso', ' A Noticia foi editado com sucesso');
