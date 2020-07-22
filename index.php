@@ -41,7 +41,7 @@
 
 	<header>
 		<div class="center">
-			<div class="logo left"><a href="/Curso%20WebCompleto/Projeto_01/">Logomarca</a></div><!--logo-->
+			<div class="logo left"><a href="/Projetos_Curso/Projeto_01/">Logomarca</a></div><!--logo-->
 			<nav class="desktop right">
 				<ul>
 					<li><a href="<?php echo INCLUDE_PATH; ?>">Home</a></li>

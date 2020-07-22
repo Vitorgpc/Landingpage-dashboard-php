@@ -10,7 +10,7 @@
 
     spl_autoload_register($autoLoad);
 
-    define('INCLUDE_PATH', 'http://localhost/Curso%20WebCompleto/Projeto_01/');
+    define('INCLUDE_PATH', 'http://localhost/Projetos_Curso/Projeto_01/');
     define('INCLUDE_PATH_PAINEL',INCLUDE_PATH.'painel/');
 
     define('BASE_DIR_PAINEL', __DIR__.'/painel');
