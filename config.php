@@ -18,7 +18,7 @@
     define('HOST', 'localhost');
     define('USER', 'root');
     define('PASSWORD', '');
-    define('DATABASE', 'projeto_01');
+    define('DATABASE', 'sistemas_dev_web');
 
     define('NOME_EMPRESA', 'Danki Code');
 

@@ -22,9 +22,51 @@
         <header>
             <h1><?php echo $post['data'] ?> - <?php echo $post['titulo'] ?></h1>
         </header>
-        <article>   
+        <article>
             <?php echo $post['conteudo'] ?>
             <img src="<?php echo INCLUDE_PATH_PAINEL ?>uploads/<?php echo $post['capa'] ?>" />
         </article>
+        <?php
+            if(Painel::logado() == false){
+                
+        ?>
+            <div class="container-erro-login">
+                <p><i class="fa fa-times"></i> Você precisa estar logado para comentar, Clique <a href="<?php echo INCLUDE_PATH ?>painel">aqui</a> para efetuar login.</p>
+            </div>
+        <?php 
+            }else{
+        ?>
+            <?php
+                if(isset($_POST['postar_comentario'])){
+                    $usuario = $_POST['nome'];
+                    $comentario = $_POST['mensagem'];
+                    $noticia_id = $_POST['noticia_id'];
+                    $sql = MySql::conectar()->prepare("INSERT INTO `tb_site.comentarios` VALUES(null,?,?,?)");
+                    $sql->execute(array($usuario, $comentario, $noticia_id));
+                    echo '<script>alert("Comentario realizado com sucesso!")</script>';
+                }  
+            ?>
+            <h2 class="postar-comentario">Faça um comentario <i class="fa fa-comment"></i></h2>
+            <form action="" method="post">
+                <input type="text" name="nome" value="<?php echo $_SESSION['nome']; ?>">
+                <textarea name="mensagem" placeholder="Seu Comentario..."></textarea>
+                <input type="hidden" name="noticia_id" value="<?php echo $post['id']; ?>">
+                <input type="submit" name="postar_comentario" value="Comentar!">
+            </form>
+            <br/>
+            <h2 class="postar-comentario">Comentarios do post <i class="fa fa-comment"></i></h2>
+            <?php
+                $comentarios = MySql::conectar()->prepare("SELECT * FROM `tb_site.comentarios` WHERE noticia_id = ?");
+                $comentarios->execute(array($post['id']));
+                $comentarios = $comentarios->fetchAll();
+
+                foreach ($comentarios as $key => $value) {
+            ?>
+            <div class="box-coment-noticia">
+                <h3><?php echo $value['nome']; ?></h3>
+                <p><?php echo $value['comentario']; ?></p>
+            </div>
+            <?php } ?>
+        <?php } ?>
     </div>
 </section>
